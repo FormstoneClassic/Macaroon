@@ -1,7 +1,7 @@
 /*
  * Macaroon Plugin - Simple cookie access
  * @author Ben Plum <benjaminplum@gmail.com>
- * @version 1.0.2
+ * @version 1.1
  *
  * Copyright © 2012 Ben Plum <ben@benjaminplum.com>
  * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
@@ -20,7 +20,7 @@
 	var methods = {
 		
 		// Create or update a cooke
-		create: function(key, value, options) {
+		_create: function(key, value, options) {
 			var date = new Date();
 			date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
 			var expires = "; expires=" + date.toGMTString();
@@ -30,7 +30,7 @@
 		},
 		
 		// Read a cookie
-		read: function(key) {
+		_read: function(key) {
 			var keyString = key + "=";
 			var cookieArray = document.cookie.split(';');
 			for(var i = 0; i < cookieArray.length; i++) {
@@ -44,8 +44,8 @@
 		},
 		
 		// Erase a cookie
-		erase: function(key) {
-			methods.create(key, "", { expires: -1 });
+		_erase: function(key) {
+			methods._create(key, "", $.extend({}, options, { expires: -1 }));
 		}
 	};
 	
@@ -64,13 +64,14 @@
 		// Delegate intent
 		if (typeof key != "undefined") {
 			if (typeof value != "undefined") {
+				console.log(value);
 				if (value == null) {
-					methods.erase(key);
+					methods._erase(key);
 				} else {
-					methods.create(key, value, opts);
+					methods._create(key, value, opts);
 				}
 			} else {
-				return methods.read(key);
+				return methods._read(key);
 			}
 		}
 	};
