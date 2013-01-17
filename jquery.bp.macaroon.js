@@ -1,7 +1,7 @@
 /*
  * Macaroon Plugin - Simple cookie access
  * @author Ben Plum
- * @version 1.2
+ * @version 1.2.1
  *
  * Copyright © 2012 Ben Plum <mr@benplum.com>
  * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
