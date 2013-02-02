@@ -19,6 +19,7 @@
 		}
 	],
 	"docs": "http://www.benplum.com/projects/macaroon/",
+	"demo": "http://www.benplum.com/projects/macaroon/",
 	"download": "https://github.com/benplum/Macaroon",
 	"bugs": "https://github.com/benplum/Macaroon/issues",
 	"dependencies": {
