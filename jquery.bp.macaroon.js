@@ -21,7 +21,7 @@ if (jQuery) (function($) {
 	var pub = {};
 
 	// Get the expiration date
-	function _get_expiration{
+	function _get_expiration(options){
 		var date = new Date();
 		if(options.expiration_time_unit == 'days'){
 			date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
