@@ -13,16 +13,28 @@ if (jQuery) (function($) {
 	var options = {
 		domain: null,
 		expires: 7,
+		expiration_time_unit: 'days',
 		path: "/"
 	};
 	
 	// Public Methods
 	var pub = {};
+
+	// Get the expiration date
+	function _get_expiration{
+		var date = new Date();
+		if(options.expiration_time_unit == 'days'){
+			date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+		}
+		else if(options.expiration_time_unit == 'months'){
+			date.setMonth(date.getMonth() + options.expires);
+		}
+		return date;
+	}
 		
 	// Create or update a cooke
 	function _create(key, value, options) {
-		var date = new Date();
-		date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+		var date = _get_expiration(options);
 		var expires = "; expires=" + date.toGMTString();
 		var path = "; path=" + options.path
 		var domain = (options.domain != null) ? "; domain=" + options.domain : "";
