@@ -1,7 +1,7 @@
 /*
  * Macaroon Plugin - Simple cookie access
  * @author Ben Plum
- * @version 1.2.2
+ * @version 1.2.4
  *
  * Copyright © 2013 Ben Plum <mr@benplum.com>
  * Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
@@ -12,8 +12,8 @@ if (jQuery) (function($) {
 	// Default Options
 	var options = {
 		domain: null,
-		expires: 7,
-		path: "/"
+		expires: (7 * 24 * 60 * 60 * 1000), // 7 days
+		path: null
 	};
 	
 	// Public Methods
@@ -22,10 +22,10 @@ if (jQuery) (function($) {
 	// Create or update a cooke
 	function _create(key, value, options) {
 		var date = new Date();
-		date.setTime(date.getTime() + (options.expires * 24 * 60 * 60 * 1000));
+		date.setTime(date.getTime() + options.expires);
 		var expires = "; expires=" + date.toGMTString();
-		var path = "; path=" + options.path
-		var domain = (options.domain != null) ? "; domain=" + options.domain : "";
+		var path = (options.path) ? "; path=" + options.path : "";
+		var domain = (options.domain) ? "; domain=" + options.domain : "";
 		document.cookie = key + "=" + value + expires + domain + path;
 	}
 	
@@ -45,7 +45,7 @@ if (jQuery) (function($) {
 	
 	// Erase a cookie
 	function _erase(key) {
-		_create(key, "", $.extend({}, options, { expires: -1 }));
+		_create(key, "FALSE", $.extend({}, options, { expires: -(7 * 24 * 60 * 60 * 1000) }));
 	}
 	
 	// Define Plugin 
