@@ -1,0 +1,27 @@
+{
+	"name": "Macaroon",
+	"version": "1.2.4",
+	"description": "A jQuery plugin for simple access to browser cookies.",
+	"keywords": [
+		"javascript",
+		"jquery",
+		"cookies",
+		"utility",
+		"benplum"
+	],
+	"authors": [
+		"Ben Plum"
+	],
+	"license": "MIT",
+	"homepage": "http://www.benplum.com/projects/macaroon/",
+	"main": [
+		"jquery.bp.macaroon.min.js"
+	],
+	"ignore": [
+		"*.json"
+	],
+	"dependencies": {
+		"jquery": ">= 1.7.0"
+	},
+	"devDependencies": {}
+}
