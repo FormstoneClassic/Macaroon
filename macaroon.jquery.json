@@ -1,28 +1,34 @@
 {
-	"name": "macaroon",
-	"title": "Macaroon",
-	"description": "A jQuery plugin for simple access to browser cookies.",
-	"keywords": [
-		"cookies",
-		"utility",
-		"benplum"
-	],
-	"version": "1.2.4",
-	"author": {
-		"name": "Ben Plum",
-		"url": "http://www.benplum.com"
-	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://www.opensource.org/licenses/mit-license.php"
-		}
-	],
-	"docs": "http://www.benplum.com/projects/macaroon/",
-	"demo": "http://www.benplum.com/projects/macaroon/",
-	"download": "https://github.com/benplum/Macaroon",
-	"bugs": "https://github.com/benplum/Macaroon/issues",
-	"dependencies": {
-		"jquery": ">=1.7"
-	}
+  "name": "macaroon",
+  "version": "3.0.0",
+  "title": "Macaroon",
+  "author": {
+    "name": "Ben Plum",
+    "email": "mr@benplum.com",
+    "url": "http://www.benplum.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": ">=1.7"
+  },
+  "description": "A jQuery plugin for simple access to browser cookies. Part of the Formstone Library.",
+  "keywords": [
+    "cookie",
+    "cookies",
+    "utility",
+    "javascript",
+    "jquery",
+    "formstone",
+    "benplum"
+  ],
+  "docs": "http://formstone.it/macaroon/",
+  "demo": "http://formstone.it/macaroon/",
+  "download": "https://github.com/benplum/Macaroon",
+  "bugs": "https://github.com/benplum/Macaroon/issues",
+  "homepage": "http://formstone.it/macaroon/"
 }
