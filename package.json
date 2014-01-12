@@ -2,14 +2,14 @@
   "name": "Macaroon",
   "id": "macaroon",
   "codename": "jquery.fs.macaroon",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A jQuery plugin for simple access to browser cookies. Part of the Formstone Library.",
   "keywords": [
 	"cookie",
 	"cookies",
 	"utility",
-    "javascript", 
-  	"jquery", 
+    "javascript",
+  	"jquery",
   	"formstone",
     "benplum"
   ],

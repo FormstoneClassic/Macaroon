@@ -1,6 +1,6 @@
 {
   "name": "Macaroon",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A jQuery plugin for simple access to browser cookies. Part of the Formstone Library.",
   "author": {
     "name": "Ben Plum",
@@ -8,5 +8,12 @@
     "url": "http://www.benplum.com"
   },
   "license": "MIT",
-  "homepage": "http://formstone.it/macaroon/"
+  "homepage": "http://formstone.it/macaroon/",
+  "main": [
+    "jquery.fs.macaroon.js"
+  ],
+  "ignore": [
+    "*.json",
+    "Gruntfile.js"
+  ]
 }

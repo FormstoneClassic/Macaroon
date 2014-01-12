@@ -1,16 +1,9 @@
 /* 
- * Macaroon v3.0.0 - 2014-01-07 
+ * Macaroon v3.0.1 - 2014-01-12 
  * A jQuery plugin for simple access to browser cookies. Part of the Formstone Library. 
  * http://formstone.it/macaroon/ 
  * 
  * Copyright 2014 Ben Plum; MIT Licensed 
- */ 
-
-/** 
- * @plugin 
- * @name Macaroon 
- * @description A jQuery plugin for simple access to browser cookies. Part of the Formstone Library. 
- * @version 3.0.0 
  */ 
 
 ;(function ($, window) {
