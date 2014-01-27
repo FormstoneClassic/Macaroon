@@ -1,22 +1,22 @@
 ;(function ($, window) {
 	"use strict";
-	
+
 	/**
 	 * @options
 	 * @param domain [string] "Cookie domain"
 	 * @param expires [int] <604800000> "Time until cookie expires"
 	 * @param path [string] "Cookie path"
-	 */ 
+	 */
 	var options = {
 		domain: null,
 		expires: (7 * 24 * 60 * 60 * 1000), // 604800000 = 7 days
 		path: null
 	};
-		
+
 	/**
 	 * @method
 	 * @name create
-	 * @description Creates a cooke
+	 * @description Creates a cookie
 	 * @param key [string] "Cookie key"
 	 * @param value [string] "Cookie value"
 	 * @param opts [object] "Options object"
@@ -24,21 +24,21 @@
 	 */
 	function _create(key, value, opts) {
 		var date = new Date();
-		
+
 		opts = $.extend({}, options, opts);
 		date.setTime(date.getTime() + opts.expires);
-		
+
 		var expires = "; expires=" + date.toGMTString(),
 			path = (opts.path) ? "; path=" + opts.path : "",
 			domain = (opts.domain) ? "; domain=" + opts.domain : "";
-		
+
 		document.cookie = key + "=" + value + expires + domain + path;
 	}
-	
+
 	/**
 	 * @method
 	 * @name read
-	 * @description Returns a cooke's value, or null
+	 * @description Returns a cookie's value, or null
 	 * @param key [string] "Cookie key"
 	 * @return [string | null] "Cookie's value, or null"
 	 * @example var value = $.macaroon(key);
@@ -46,7 +46,7 @@
 	function _read(key) {
 		var keyString = key + "=",
 			cookies = document.cookie.split(';');
-		
+
 		for(var i = 0; i < cookies.length; i++) {
 			var cookie = cookies[i];
 			while (cookie.charAt(0) === ' ') {
@@ -56,10 +56,10 @@
 				return cookie.substring(keyString.length, cookie.length);
 			}
 		}
-		
+
 		return null;
 	}
-	
+
 	/**
 	 * @method
 	 * @name erase
@@ -70,7 +70,7 @@
 	function _erase(key) {
 		_create(key, "FALSE", { expires: -(7 * 24 * 60 * 60 * 1000) });
 	}
-	
+
 	/**
 	 * @method
 	 * @name defaults
@@ -78,7 +78,7 @@
 	 * @param opts [object] <{}> "Options object"
 	 * @example $.macaroon(opts);
 	 */
-	
+
 	$.macaroon = function(key, value, opts) {
 		// Set defaults
 		if (typeof key === "object") {
@@ -87,7 +87,7 @@
 		} else {
 			opts = $.extend({}, options, opts);
 		}
-		
+
 		// Delegate intent
 		if (typeof key !== "undefined") {
 			if (typeof value !== "undefined") {
