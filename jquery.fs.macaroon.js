@@ -1,5 +1,5 @@
 /* 
- * Macaroon v3.0.2 - 2014-01-27 
+ * Macaroon v3.0.3 - 2014-02-05 
  * A jQuery plugin for simple access to browser cookies. Part of the Formstone Library. 
  * http://formstone.it/macaroon/ 
  * 
@@ -34,9 +34,11 @@
 		var date = new Date();
 
 		opts = $.extend({}, options, opts);
-		date.setTime(date.getTime() + opts.expires);
+		if (opts.expires) {
+			date.setTime(date.getTime() + opts.expires);
+		}
 
-		var expires = "; expires=" + date.toGMTString(),
+		var expires = (opts.expires) ? "; expires=" + date.toGMTString() : "",
 			path = (opts.path) ? "; path=" + opts.path : "",
 			domain = (opts.domain) ? "; domain=" + opts.domain : "";
 
