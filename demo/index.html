@@ -72,15 +72,10 @@
 			function _output(label, value) {
 				var html = '';
 				html += '<p><span class="label">' + label + ':</span>';
-				html += '<span class="value">' + value; // + '<br />[ ' + document.cookie + ' ]</span></p>';
+				html += '<span class="value">' + value + '</p>';
 
 				$(".output").prepend(html);
 			}
-/*
-			function _output(text) {
-				$(".output").prepend("<p>" + text + "</p>");
-			}
-*/
 		</script>
 	</head>
 	<body class="gridlock demo">
