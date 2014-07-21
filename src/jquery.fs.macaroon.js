@@ -26,11 +26,11 @@
 		var date = new Date();
 
 		opts = $.extend({}, options, opts);
-		if (opts.expires) {
+		if (opts.expires || typeof opts.expires === "number") {
 			date.setTime(date.getTime() + opts.expires);
 		}
 
-		var expires = (opts.expires && typeof opts.expires === "number") ? "; expires=" + date.toGMTString() : "",
+		var expires = (opts.expires || typeof opts.expires === "number") ? "; expires=" + date.toGMTString() : "",
 			path = (opts.path) ? "; path=" + opts.path : "",
 			domain = (opts.domain) ? "; domain=" + opts.domain : "";
 
