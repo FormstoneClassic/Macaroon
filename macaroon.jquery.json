@@ -1,6 +1,6 @@
 {
   "name": "macaroon",
-  "version": "3.0.5",
+  "version": "3.0.6",
   "title": "Macaroon",
   "author": {
     "name": "Ben Plum",
@@ -23,12 +23,11 @@
     "utility",
     "javascript",
     "jquery",
-    "formstone",
-    "benplum"
+    "formstone"
   ],
   "docs": "http://formstone.it/macaroon/",
   "demo": "http://formstone.it/macaroon/",
-  "download": "https://github.com/benplum/Macaroon",
-  "bugs": "https://github.com/benplum/Macaroon/issues",
+  "download": "https://github.com/Formstone/Macaroon",
+  "bugs": "https://github.com/Formstone/Macaroon/issues",
   "homepage": "http://formstone.it/macaroon/"
 }
