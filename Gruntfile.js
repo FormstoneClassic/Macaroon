@@ -1,7 +1,6 @@
 /*global module:false*/
 
 // NO Less
-
 module.exports = function(grunt) {
 
 	grunt.initConfig({
