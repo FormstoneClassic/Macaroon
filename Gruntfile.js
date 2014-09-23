@@ -135,7 +135,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('buildReadme', 'Build Formstone README.md file.', function () {
 		var pkg = grunt.file.readJSON('package.json'),
 			destination = "README.md",
-			markdown = '<a href="http://gruntjs.com" target="_blank"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a> \n' +
+			markdown = '<a href="http://gruntjs.com" target="_blank"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a> ' +
+					   '<a href="https://travis-ci.org/Formstone/<%= pkg.name %>" target="_blank">https://travis-ci.org/Formstone/<%= pkg.name %>.svg?branch=master</a> \n' +
 					   '# ' + pkg.name + ' \n\n' +
 					   pkg.description + ' \n\n' +
 					   '- [Demo](' + pkg.demo + ') \n' +
@@ -147,7 +148,9 @@ module.exports = function(grunt) {
 		grunt.log.writeln('File "' + destination + '" created.');
 	});
 
-	// Default task.
-	grunt.registerTask('default', [ 'jshint', 'copy', 'uglify', 'qunit', 'jquerymanifest', 'usebanner', 'sync', 'buildReadme' ]);
+	// Tasks
+	grunt.registerTask('build', [ 'jshint', 'copy', 'uglify', 'qunit' ]);
+
+	grunt.registerTask('default', [ 'build', 'jquerymanifest', 'usebanner', 'sync', 'buildReadme' ]);
 
 };

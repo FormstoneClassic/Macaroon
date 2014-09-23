@@ -13,7 +13,6 @@
     "jquery.fs.macaroon.js"
   ],
   "ignore": [
-  	".bowerrc",
     "*.jquery.json",
     "Gruntfile.js",
     "components/",
