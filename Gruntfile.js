@@ -136,7 +136,7 @@ module.exports = function(grunt) {
 		var pkg = grunt.file.readJSON('package.json'),
 			destination = "README.md",
 			markdown = '<a href="http://gruntjs.com" target="_blank"><img src="https://cdn.gruntjs.com/builtwith.png" alt="Built with Grunt"></a> ' +
-					   '<a href="https://travis-ci.org/Formstone/'+pkg.name+'" target="_blank">https://travis-ci.org/Formstone/'+pkg.name+'.svg?branch=master</a> \n' +
+					   '<a href="https://travis-ci.org/Formstone/'+pkg.name+'" target="_blank"><img src="https://travis-ci.org/Formstone/'+pkg.name+'.svg?branch=master" alt=""></a> \n' +
 					   '# ' + pkg.name + ' \n\n' +
 					   pkg.description + ' \n\n' +
 					   '- [Demo](' + pkg.demo + ') \n' +
