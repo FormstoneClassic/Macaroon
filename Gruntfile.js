@@ -63,6 +63,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		// QUnit
+		qunit: {
+			options: {
+				timeout: 10000
+			},
+			all: [ 'test/*.html' ]
+		},
 		// jQuery Manifest
 		jquerymanifest: {
 			options: {
@@ -103,7 +110,13 @@ module.exports = function(grunt) {
 						main: [
 							'<%= pkg.codename %>.js'
 						],
-						ignore: [ "*.jquery.json", "Gruntfile.js", "src/" ]
+						ignore: [
+							"*.jquery.json",
+							"Gruntfile.js",
+							"components/",
+							"src/",
+							"test/"
+						]
 					}
 				}
 			}
@@ -111,6 +124,7 @@ module.exports = function(grunt) {
 	});
 
 	// Load tasks
+	grunt.loadNpmTasks('grunt-contrib-qunit');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -135,6 +149,6 @@ module.exports = function(grunt) {
 	});
 
 	// Default task.
-	grunt.registerTask('default', [ 'jshint', 'copy', 'uglify', 'jquerymanifest', 'usebanner', 'sync', 'buildReadme' ]);
+	grunt.registerTask('default', [ 'jshint', 'copy', 'uglify', 'qunit', 'jquerymanifest', 'usebanner', 'sync', 'buildReadme' ]);
 
 };

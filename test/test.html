@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Test</title>
+		<link rel="stylesheet" href="../components/qunit/qunit/qunit.css">
+		<script src="../components/qunit/qunit/qunit.js"></script>
+
+		<script src="../components/jquery/dist/jquery.min.js"></script>
+
+		<script src="../jquery.fs.macaroon.js"></script>
+	</head>
+	<body>
+		<div id="qunit"></div>
+		<div id="qunit-fixture"></div>
+		<script>
+			QUnit.module("Testing");
+
+			QUnit.test("Set", function( assert ) {
+				eraseCookie("foo");
+
+				$.macaroon("foo", "bar");
+
+				var exists = document.cookie.indexOf("foo=bar") > -1;
+				assert.ok(exists, "'foo' was set to 'bar'");
+			});
+
+			QUnit.test("Get", function( assert ) {
+				eraseCookie("foo");
+
+				$.macaroon("foo", "bar");
+
+				var value = $.macaroon("foo");
+				assert.equal(value, "bar", "'foo' is equal to 'bar'");
+			});
+
+			QUnit.test("Erase", function( assert ) {
+				eraseCookie("foo");
+
+				$.macaroon("foo", "bar");
+
+				$.macaroon("foo", null);
+
+				var exists = document.cookie.indexOf("foo=bar") < 0;
+				assert.ok(exists, "'foo' was cleared");
+			});
+
+			function eraseCookie(name) {
+				var pathBits = location.pathname.split('/'),
+					pathCurrent = ' path=';
+
+				document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;';
+
+				for (var i = 0; i < pathBits.length; i++) {
+					pathCurrent += ((pathCurrent.substr(-1) != '/') ? '/' : '') + pathBits[i];
+					document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;' + pathCurrent + ';';
+				}
+			}
+		</script>
+	</body>
+</html>
