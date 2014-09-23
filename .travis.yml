@@ -3,5 +3,10 @@ node_js:
 - 0.11
 before_script:
 - npm install grunt-cli
-- npm install
+- npm install grunt-contrib-jshint
+- npm install grunt-contrib-copy
+- npm install grunt-contrib-uglify
+- npm install grunt-contrib-qunit
+- npm install -g bower
+- bower install
 script: grunt build --verbose
