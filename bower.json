@@ -8,7 +8,7 @@
     "url": "http://www.benplum.com"
   },
   "license": "MIT",
-  "homepage": "http://formstone.it/macaroon/",
+  "homepage": "http://classic.formstone.it/macaroon/",
   "main": [
     "jquery.fs.macaroon.js"
   ],
@@ -22,5 +22,13 @@
   "devDependencies": {
     "qunit": "~1.15.0",
     "jquery": "1.11.1"
-  }
+  },
+  "keywords": [
+    "cookie",
+    "cookies",
+    "utility",
+    "javascript",
+    "jquery",
+    "formstone"
+  ]
 }

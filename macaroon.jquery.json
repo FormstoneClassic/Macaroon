@@ -25,9 +25,9 @@
     "jquery",
     "formstone"
   ],
-  "docs": "http://formstone.it/macaroon/",
-  "demo": "http://formstone.it/macaroon/",
-  "download": "https://github.com/Formstone/Macaroon",
-  "bugs": "https://github.com/Formstone/Macaroon/issues",
-  "homepage": "http://formstone.it/macaroon/"
+  "docs": "http://classic.formstone.it/macaroon/",
+  "demo": "http://classic.formstone.it/macaroon/",
+  "download": "https://github.com/FormstoneClassic/Macaroon",
+  "bugs": "https://github.com/FormstoneClassic/Macaroon/issues",
+  "homepage": "http://classic.formstone.it/macaroon/"
 }

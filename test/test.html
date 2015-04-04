@@ -45,14 +45,15 @@
 				assert.ok(exists, "'foo' was cleared");
 			});
 
+			// Different method from: http://stackoverflow.com/questions/179355/clearing-all-cookies-with-javascript#179514
 			function eraseCookie(name) {
-				var pathBits = location.pathname.split('/'),
+				var pathParts = location.pathname.split('/'),
 					pathCurrent = ' path=';
 
 				document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;';
 
-				for (var i = 0; i < pathBits.length; i++) {
-					pathCurrent += ((pathCurrent.substr(-1) != '/') ? '/' : '') + pathBits[i];
+				for (var i = 0; i < pathParts.length; i++) {
+					pathCurrent += ((pathCurrent.substr(-1) != '/') ? '/' : '') + pathParts[i];
 					document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;' + pathCurrent + ';';
 				}
 			}
